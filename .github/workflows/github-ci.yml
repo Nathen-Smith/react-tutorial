@@ -6,9 +6,9 @@ on:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-    # defaults:
-    #   run:
-    #     working-directory: ./web
+    defaults:
+      run:
+        working-directory: ./web
 
     strategy:
       matrix:
@@ -22,5 +22,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - run: npm install
+          cache-dependency-path: web/yarn.lock
+      - run: npm ci
       - run: npm run build

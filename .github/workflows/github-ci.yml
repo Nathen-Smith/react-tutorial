@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./web
+        working-directory: "web"
 
     strategy:
       matrix:
@@ -22,6 +22,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-          cache-dependency-path: web/yarn.lock
+          cache-dependency-path: "**/yarn.lock"
       - run: npm ci
       - run: npm run build

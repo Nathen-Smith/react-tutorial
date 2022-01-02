@@ -1,7 +1,8 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
-
+import { MenuIcon, XIcon, UserIcon } from "@heroicons/react/outline";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -34,8 +35,8 @@ const App = () => {
                 <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                   <div className="hidden sm:block sm">
                     <div className="flex space-x-4 ">
-                      {navigation.map((item, index) => (
-                        <span>
+                      {navigation.map((item) => (
+                        <span key={item.to}>
                           <a
                             id={item.to}
                             key={item.name}
@@ -51,13 +52,13 @@ const App = () => {
                           </a>
 
                           <div
-                            className="relative h-0.5 bg-blue-600 -top-0.5 rounded-t-lg"
+                            className="relative h-0.5 bg-blue-600 -top-0.5 rounded-t-3xl"
+                            key={`${item.name}active`}
                             style={
                               ({
                                 width: document.getElementById(item.to)
                                   ?.offsetWidth,
                               },
-                              { transition: "opacity 3s ease-in-out" },
                               {
                                 opacity:
                                   window.location.pathname === item.to ? 1 : 0,
@@ -70,8 +71,11 @@ const App = () => {
                   </div>
                 </div>
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                  <div className="ml-3 relative text-sm font-small">
-                    <span>Nathen</span>
+                  <div className="ml-3 relative text-sm font-small flex flex-row">
+                    <div>Nathen</div>
+                    <UserIcon className="h-5 w-5 text-black" />
+                    <FontAwesomeIcon icon={faGithub} />
+                    {/* <span>Nathen</span> */}
                   </div>
                 </div>
               </div>

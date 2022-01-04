@@ -29,9 +29,8 @@ jobs:
 
       - run: yarn install
       - run: yarn run build
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
-          cname: nathensmith.com/react-tutorial
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.

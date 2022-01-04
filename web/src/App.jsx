@@ -18,6 +18,7 @@ const App = () => {
 
   const [scrollTop, setScrollTop] = useState(0);
   const [scrolling, setScrolling] = useState(false);
+  console.log(scrolling);
 
   useEffect(() => {
     const onScroll = (e) => {

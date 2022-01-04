@@ -24,5 +24,4 @@ jobs:
           cache: "yarn"
           cache-dependency-path: "./web/yarn.lock"
       - run: yarn install
-      - run: yarn run build
       - run: yarn run deploy

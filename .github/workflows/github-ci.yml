@@ -24,14 +24,18 @@ jobs:
           cache: "yarn"
           cache-dependency-path: "./web/yarn.lock"
       - run: yarn install
-      - run: yarn run build
-      - run: |
-          mkdir build2
-          mv build/ build2/
-      - name: Deploy to GitHub Pages
-        if: success()
-        uses: crazy-max/ghaction-github-pages@v1
-        with:
-          build_dir: build2
+      # - run: yarn run build
+      # - run: |
+      #     mkdir build2
+      #     mv build/ build2/
+      # - name: Deploy to GitHub Pages
+      #   if: success()
+      #   uses: crazy-max/ghaction-github-pages@v2
+      #   with:
+      #     target_branch: gh-pages
+      #     build_dir: build2
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: yarn run deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

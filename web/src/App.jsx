@@ -14,6 +14,7 @@ const App = () => {
     { name: "Search", to: "#search" },
     { name: "Gallery", to: "#gallery" },
     { name: "Description", to: "#description" },
+    { name: "Experience", to: "#experience" },
   ];
 
   const [scrollTop, setScrollTop] = useState(0);

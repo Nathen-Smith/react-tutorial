@@ -1,0 +1,13 @@
+.NavActiveBar {
+  animation: slideIn 5s ease;
+  // width: calc(var(--active) * 0.5);
+  width: 100%;
+}
+@keyframes slideIn {
+  from {
+    width: 10%;
+  }
+  from {
+    width: 100%;
+  }
+}

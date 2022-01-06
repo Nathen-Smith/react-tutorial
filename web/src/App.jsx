@@ -1,59 +1,52 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Disclosure } from "@headlessui/react";
-import { MenuIcon, XIcon, UserIcon } from "@heroicons/react/outline";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Content from "./Content";
+import "./App.scss";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 const App = () => {
   const [navLinks, setNavLinks] = useState([
-    { name: "Nathen", to: "#", active: false },
+    { name: "Nathen", to: "#", active: true },
     { name: "Search", to: "#search", active: false },
     { name: "Gallery", to: "#gallery", active: false },
     { name: "Description", to: "#description", active: false },
     { name: "Experience", to: "#experience", active: false },
   ]);
 
-  // takes index of element to change
-  const updateFieldChanged = (index) => {
-    navLinks.map((link) => {
-      link.active = false;
-    });
+  const updateFieldChanged = useCallback(
+    (index) => {
+      navLinks.forEach((link) => {
+        link.active = false; // reset all to false
+      });
 
-    let newArr = [...navLinks]; // copying the old datas array
-    newArr[index].active = true; // replace e.target.value with whatever you want to change it to
-    console.log(newArr);
-    setNavLinks(newArr);
-  };
-
-  const [scrollTop, setScrollTop] = useState(0);
-  // const [scrolling, setScrolling] = useState(false);
+      let newArr = [...navLinks]; // copying the old array
+      newArr[index].active = true; // setting element at this index true
+      setNavLinks(newArr);
+    },
+    [navLinks]
+  );
 
   useEffect(() => {
-    const onScroll = (e) => {
-      setScrollTop(e.target.documentElement.scrollTop);
-      // setScrolling(e.target.documentElement.scrollTop > scrollTop);
-    };
-    window.addEventListener("scroll", onScroll);
-
-    let navLinksLen = navLinks.length;
-    for (let i = 1; i < navLinksLen; i++) {
-      if (
-        document
-          .getElementById(navLinks[i].to.slice(1))
-          ?.getBoundingClientRect().top < window.innerHeight
-      ) {
-        updateFieldChanged(i);
-        return () => window.removeEventListener("scroll", onScroll);
+    window.onscroll = () => {
+      let navLinksLen = navLinks.length;
+      for (let i = 1; i < navLinksLen; i++) {
+        if (
+          document
+            .getElementById(navLinks[i].to.slice(1))
+            ?.getBoundingClientRect().top < window.innerHeight
+        ) {
+          updateFieldChanged(i);
+          return;
+        }
+        updateFieldChanged(0);
       }
-    }
-
-    updateFieldChanged(0);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [scrollTop]);
+    };
+  }, [navLinks, updateFieldChanged]);
 
   return (
     <div>
@@ -92,17 +85,15 @@ const App = () => {
                           </a>
 
                           <div
-                            className="relative h-0.5 bg-blue-600 -top-0.5 rounded-t-3xl"
+                            className={`NavActiveBar ${
+                              item.active ? "opacity-100" : "opacity-0"
+                            } relative h-0.5 bg-blue-600 -top-0.5 rounded-t-3xl`}
                             key={`${item.name}active`}
-                            style={
-                              ({
-                                width: document.getElementById(item.to)
-                                  ?.offsetWidth,
-                              },
-                              {
-                                opacity: item.active ? 1 : 0,
-                              })
-                            }
+                            // style={{
+                            //   "--active": item.active
+                            //     ? document.getElementById(item.to)?.offsetWidth
+                            //     : 0,
+                            // }}
                           ></div>
                         </span>
                       ))}

@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useReducer } from "react";
 import { Disclosure } from "@headlessui/react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { MenuIcon, XIcon, SunIcon, MoonIcon } from "@heroicons/react/outline";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+// import { faMoon } from "@fortawesome/free-regular-svg-icons";
 import Content from "./Content";
 import "./App.scss";
 function classNames(...classes) {
@@ -48,9 +49,42 @@ const App = () => {
     };
   }, [navLinks, updateFieldChanged]);
 
+  useEffect(() => {
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
+  function reducer(_, themeColor) {
+    switch (themeColor) {
+      case "light":
+        localStorage.theme = "light";
+        document.documentElement.classList.remove("dark");
+        return "light";
+      case "dark":
+        localStorage.theme = "dark";
+        document.documentElement.classList.add("dark");
+        return "dark";
+      default:
+        localStorage.removeItem("theme");
+        return "dark";
+    }
+  }
+
+  const [theme, dispatch] = useReducer(reducer, localStorage.theme || "dark");
+
   return (
-    <div>
-      <Disclosure as="nav" className="bg-gray-100 h-16 sticky top-0 z-50">
+    <div className="dark:bg-zinc-800 dark:text-gray-300 transition-colors ease-in-out">
+      <Disclosure
+        as="nav"
+        className="bg-gray-100 dark:bg-neutral-800 h-16 sticky top-0 z-50 shadow-md"
+      >
         {({ open }) => (
           <>
             <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -76,8 +110,8 @@ const App = () => {
                             href={item.to}
                             className={classNames(
                               item.active
-                                ? "text-black"
-                                : "text-gray-400 hover:text-black",
+                                ? "text-black dark:text-white"
+                                : "text-gray-400 hover:text-black dark:text-gray-500 dark:hover:text-gray-100",
                               "h-16 text-sm font-medium text-center flex justify-center items-center transition-colors ease-in-out"
                             )}
                           >
@@ -87,7 +121,7 @@ const App = () => {
                           <div
                             className={`NavActiveBar ${
                               item.active ? "opacity-100" : "opacity-0"
-                            } relative h-0.5 bg-blue-600 -top-0.5 rounded-t-3xl transition-opacity ease-in-out`}
+                            } relative h-0.5 bg-blue-600 dark:bg-indigo-300 -top-0.5 rounded-t-3xl transition-opacity ease-in-out`}
                           ></div>
                         </span>
                       ))}
@@ -102,7 +136,40 @@ const App = () => {
                       style={{ color: "red" }}
                     />
                     <FontAwesomeIcon icon={faGithub} size="2x" />
-
+                    {/* <FontAwesomeIcon
+                      icon={faMoon}
+                      size="2x"
+                      onClick={() => {
+                        console.log(localStorage.theme);
+                        localStorage.theme = "light";
+                      }}
+                    /> */}
+                    {theme === "light" ? (
+                      <SunIcon
+                        onClick={() => dispatch("dark")}
+                        className="h-7 text-gray-600 hover:text-black transition-colors ease-in-out cursor-pointer"
+                      />
+                    ) : (
+                      <MoonIcon
+                        onClick={() => dispatch("light")}
+                        className="h-7 hover:text-white transition-colors ease-in-out cursor-pointer"
+                      />
+                    )}
+                    <div class="flex items-center justify-center w-full mb-12">
+                      <label
+                        for="toggleB"
+                        class="flex items-center cursor-pointer"
+                      >
+                        <div class="relative">
+                          <input type="checkbox" id="toggleB" class="sr-only" />
+                          <div class="block bg-gray-600 w-14 h-8 rounded-full"></div>
+                          <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
+                        </div>
+                        <div class="ml-3 text-gray-700 font-medium">
+                          Toggle Me!
+                        </div>
+                      </label>
+                    </div>
                     {/* <span>Nathen</span> */}
                   </div>
                 </div>

@@ -20,12 +20,12 @@ const App = () => {
 
   const updateFieldChanged = useCallback(
     (index) => {
-      navLinks.forEach((link) => {
-        link.active = false; // reset all to false
-      });
-
       let newArr = [...navLinks]; // copying the old array
       newArr[index].active = true; // setting element at this index true
+      newArr.forEach((_, idx) => {
+        idx !== index && (newArr[idx].active = false);
+      });
+
       setNavLinks(newArr);
     },
     [navLinks]
@@ -78,7 +78,7 @@ const App = () => {
                               item.active
                                 ? "text-black"
                                 : "text-gray-400 hover:text-black",
-                              "h-16 text-sm font-medium text-center flex justify-center items-center"
+                              "h-16 text-sm font-medium text-center flex justify-center items-center transition-colors ease-in-out"
                             )}
                           >
                             {item.name}
@@ -87,13 +87,7 @@ const App = () => {
                           <div
                             className={`NavActiveBar ${
                               item.active ? "opacity-100" : "opacity-0"
-                            } relative h-0.5 bg-blue-600 -top-0.5 rounded-t-3xl`}
-                            key={`${item.name}active`}
-                            // style={{
-                            //   "--active": item.active
-                            //     ? document.getElementById(item.to)?.offsetWidth
-                            //     : 0,
-                            // }}
+                            } relative h-0.5 bg-blue-600 -top-0.5 rounded-t-3xl transition-opacity ease-in-out`}
                           ></div>
                         </span>
                       ))}

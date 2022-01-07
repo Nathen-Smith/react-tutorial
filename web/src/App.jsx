@@ -175,16 +175,14 @@ const App = () => {
                 </div>
               </div>
             </div>
-            <Disclosure.Panel className="sm:hidden">
+            <Disclosure.Panel className="sm:hidden z-0 bg-gray-100 dark:bg-neutral-800 ">
               <div className="px-2 pt-2 pb-3 space-y-1 flex flex-col w-40">
                 {navLinks.map((item) => (
                   <a
                     key={item.name}
                     href={item.to}
                     className={classNames(
-                      window.location.href.slice(
-                        window.location.href.indexOf("#")
-                      ) === item.to
+                      item.active
                         ? "bg-gray-300 text-black"
                         : "text-gray-400 hover:bg-gray-300 hover:text-black",
                       "px-3 py-2 rounded-md text-sm font-medium mr-auto"

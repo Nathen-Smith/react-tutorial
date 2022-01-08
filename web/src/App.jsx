@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback, useReducer } from "react";
+import { useMediaQuery } from "react-responsive";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon, SunIcon, MoonIcon } from "@heroicons/react/outline";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-// import { faMoon } from "@fortawesome/free-regular-svg-icons";
 import Content from "./Content";
-import "./App.scss";
+import { navIconLinks } from "./constants";
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -79,6 +79,8 @@ const App = () => {
 
   const [theme, dispatch] = useReducer(reducer, localStorage.theme || "dark");
 
+  const isNotMobile = useMediaQuery({ query: "(min-width: 640px)" });
+
   return (
     <div className="dark:bg-zinc-800 dark:text-gray-300 transition-colors ease-in-out">
       <Disclosure
@@ -119,14 +121,28 @@ const App = () => {
                   </div>
                 </div>
                 <div className="absolute inset-y-0 right-0 flex items-center justify-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                  <div className="ml-3 relative text-sm font-small flex flex-row justify-center space-x-1">
-                    <FontAwesomeIcon
-                      icon={faLinkedin}
-                      size="2x"
-                      style={{ color: "red" }}
-                    />
-                    <FontAwesomeIcon icon={faGithub} size="2x" />
-                    <div className="flex items-center sm:hidden border text-gray-400 border-gray-400 rounded-md hover:bg-gray-400 dark:hover:bg-zinc-700 hover:text-white cursor-pointer transition-colors ease-in-out focus:outline-none">
+                  <div className="ml-3 relative text-sm font-small flex flex-row justify-center items-center space-x-2">
+                    {navIconLinks
+                      .filter((item) => isNotMobile || !item.mobileInvisible)
+                      .map((item) => {
+                        // if item is mobile invisible, do not return it when mobile view
+                        // => if in desktop view or is supposed to be visible in mobile view
+                        // if mobile and is supposed to be visible in dropdown;
+                        return (
+                          <a
+                            href={item.link}
+                            key={item.link}
+                            className="flex justify-center items-center"
+                          >
+                            <FontAwesomeIcon
+                              icon={item.icon}
+                              style={{ height: "24px", width: "24px" }}
+                            />
+                          </a>
+                        );
+                      })}
+
+                    <div className="flex items-center border text-gray-400 border-gray-400 rounded-md hover:bg-gray-400 dark:hover:bg-zinc-700 hover:text-white cursor-pointer transition-colors ease-in-out focus:outline-none">
                       {theme === "light" ? (
                         <SunIcon
                           onClick={() => dispatch("dark")}
@@ -172,6 +188,21 @@ const App = () => {
                     {item.name}
                   </a>
                 ))}
+                {navIconLinks
+                  .filter((item) => !isNotMobile && item.mobileInvisible)
+                  .map((item) => {
+                    // if item is mobile invisible, do not return it when mobile view
+                    // => if in desktop view or is supposed to be visible in mobile view
+                    // else show in dropdown
+                    return (
+                      <a href={item.link} key={item.link} className="pr-2">
+                        <FontAwesomeIcon
+                          icon={item.icon}
+                          style={{ height: "24px", width: "24px" }}
+                        />
+                      </a>
+                    );
+                  })}
               </div>
             </Disclosure.Panel>
           </>

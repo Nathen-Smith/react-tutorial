@@ -89,16 +89,6 @@ const App = () => {
           <>
             <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
               <div className="flex items-center justify-between h-16">
-                <div className="inset-y-0 left-0 flex items-center sm:hidden">
-                  <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-400 focus:outline-none">
-                    <span className="sr-only">Open main menu</span>
-                    {open ? (
-                      <XIcon className="block h-6 w-6" aria-hidden="true" />
-                    ) : (
-                      <MenuIcon className="block h-6 w-6" aria-hidden="true" />
-                    )}
-                  </Disclosure.Button>
-                </div>
                 <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                   <div className="hidden sm:block sm">
                     <div className="flex space-x-4 ">
@@ -128,68 +118,58 @@ const App = () => {
                     </div>
                   </div>
                 </div>
-                <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                  <div className="ml-3 relative text-sm font-small flex flex-row justify-center">
+                <div className="absolute inset-y-0 right-0 flex items-center justify-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                  <div className="ml-3 relative text-sm font-small flex flex-row justify-center space-x-1">
                     <FontAwesomeIcon
                       icon={faLinkedin}
                       size="2x"
                       style={{ color: "red" }}
                     />
                     <FontAwesomeIcon icon={faGithub} size="2x" />
-                    {/* <FontAwesomeIcon
-                      icon={faMoon}
-                      size="2x"
-                      onClick={() => {
-                        console.log(localStorage.theme);
-                        localStorage.theme = "light";
-                      }}
-                    /> */}
-                    {theme === "light" ? (
-                      <SunIcon
-                        onClick={() => dispatch("dark")}
-                        className="h-7 text-gray-600 hover:text-black transition-colors ease-in-out cursor-pointer"
-                      />
-                    ) : (
-                      <MoonIcon
-                        onClick={() => dispatch("light")}
-                        className="h-7 hover:text-white transition-colors ease-in-out cursor-pointer"
-                      />
-                    )}
-                    <div class="flex items-center justify-center w-full mb-12">
-                      <label
-                        for="toggleB"
-                        class="flex items-center cursor-pointer"
-                      >
-                        <div class="relative">
-                          <input type="checkbox" id="toggleB" class="sr-only" />
-                          <div class="block bg-gray-600 w-14 h-8 rounded-full"></div>
-                          <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
-                        </div>
-                        <div class="ml-3 text-gray-700 font-medium">
-                          Toggle Me!
-                        </div>
-                      </label>
+                    <div className="nav-icon">
+                      {theme === "light" ? (
+                        <SunIcon
+                          onClick={() => dispatch("dark")}
+                          className="h-7 hover:text-white transition-colors ease-in-out cursor-pointer"
+                        />
+                      ) : (
+                        <MoonIcon
+                          onClick={() => dispatch("light")}
+                          className="h-7 hover:text-white transition-colors ease-in-out cursor-pointer"
+                        />
+                      )}
                     </div>
-                    {/* <span>Nathen</span> */}
+                    <div className="nav-icon">
+                      <Disclosure.Button className="inline-flex items-center justify-center rounded-md text-gray-400 hover:text-white focus:outline-none h-7">
+                        <span className="sr-only">Open main menu</span>
+                        {open ? (
+                          <XIcon className="block h-6 w-7" aria-hidden="true" />
+                        ) : (
+                          <MenuIcon
+                            className="block h-6 w-7"
+                            aria-hidden="true"
+                          />
+                        )}
+                      </Disclosure.Button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <Disclosure.Panel className="sm:hidden z-0 bg-gray-100 dark:bg-neutral-800 ">
-              <div className="px-2 pt-2 pb-3 space-y-1 flex flex-col w-40">
+            <Disclosure.Panel className="sm:hidden z-50 bg-gray-100 dark:bg-neutral-800 shadow-md">
+              <div className="px-2 pt-2 pb-3 space-y-1 flex flex-col text-right">
                 {navLinks.map((item) => (
-                  <a
+                  <div
                     key={item.name}
-                    href={item.to}
                     className={classNames(
                       item.active
-                        ? "bg-gray-300 text-black"
-                        : "text-gray-400 hover:bg-gray-300 hover:text-black",
-                      "px-3 py-2 rounded-md text-sm font-medium mr-auto"
+                        ? "bg-gray-300 text-black dark:bg-zinc-700 dark:text-white"
+                        : "text-gray-400 hover:bg-gray-300 hover:text-black dark:hover:bg-zinc-700 dark:hover:text-white",
+                      "px-3 py-2 rounded-md text-sm font-medium"
                     )}
                   >
-                    {item.name}
-                  </a>
+                    <a href={item.to}>{item.name}</a>
+                  </div>
                 ))}
               </div>
             </Disclosure.Panel>

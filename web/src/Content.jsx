@@ -2,7 +2,7 @@ import { experience } from "./constants";
 
 const Content = () => {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto md:mx-10">
       <div className="h-screen">
         <p className="text-9xl dark:text-white">Hi.</p>
         <p className="text-3xl dark:text-white">I'm Nathen Smith.</p>
@@ -18,14 +18,16 @@ const Content = () => {
         </a>
       </div>
 
-      <div id="about" className="pt-16">
-        I am a Senior studying Computer Engineering at the University of
-        Illinois at Urbana-Champaign. Detail-oriented software developer where I
-        enjoy fostering a positive development environment, designing scalable
-        solutions and ensuring responsive, intuitive user experiences.
+      <div id="about" className="scroll-mt-16">
+        <div className="text-center text-4xl">about</div>I am a Senior studying
+        Computer Engineering at the University of Illinois at Urbana-Champaign.
+        Detail-oriented software developer where I enjoy fostering a positive
+        development environment, designing scalable solutions and ensuring
+        responsive, intuitive user experiences.
       </div>
 
-      <div id="experience" className="pt-16">
+      <div id="experience" className="scroll-mt-16">
+        <div className="text-center text-4xl">experience</div>
         {experience.map(({ title, date, description }) => {
           // if (type === "lg") {
           //   return (

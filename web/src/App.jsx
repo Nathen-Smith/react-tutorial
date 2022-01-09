@@ -43,11 +43,10 @@ const App = () => {
                 )
                 .getPropertyValue("height")
                 .slice(0, -2) //remove px
-            ) >
+            ) -
+            64 >
             0
         ) {
-          // basically react intersection observer can solve this too
-
           setPageSectionTrue(i);
           return;
         }

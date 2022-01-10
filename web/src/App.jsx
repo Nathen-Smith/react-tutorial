@@ -44,7 +44,7 @@ const App = () => {
                 .getPropertyValue("height")
                 .slice(0, -2) //remove px
             ) -
-            64 >
+            65 >
             0
         ) {
           setPageSectionTrue(i);

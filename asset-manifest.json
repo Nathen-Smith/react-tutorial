@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-tutorial/static/css/main.cc52078d.css",
-    "main.js": "/react-tutorial/static/js/main.4c7f5551.js",
+    "main.css": "/react-tutorial/static/css/main.7b7dc361.css",
+    "main.js": "/react-tutorial/static/js/main.742daad1.js",
     "index.html": "/react-tutorial/index.html",
-    "main.cc52078d.css.map": "/react-tutorial/static/css/main.cc52078d.css.map",
-    "main.4c7f5551.js.map": "/react-tutorial/static/js/main.4c7f5551.js.map"
+    "main.7b7dc361.css.map": "/react-tutorial/static/css/main.7b7dc361.css.map",
+    "main.742daad1.js.map": "/react-tutorial/static/js/main.742daad1.js.map"
   },
   "entrypoints": [
-    "static/css/main.cc52078d.css",
-    "static/js/main.4c7f5551.js"
+    "static/css/main.7b7dc361.css",
+    "static/js/main.742daad1.js"
   ]
 }

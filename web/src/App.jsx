@@ -143,7 +143,7 @@ const App = () => {
                 </div>
                 <div
                   className={
-                    "text-black dark:text-white left-0 absolute pl-2 block sm:hidden h-16 text-sm font-medium text-center flex justify-center items-center transition-colors ease-in-out"
+                    "text-black dark:text-white left-0 absolute pl-2 block sm:hidden h-16 text-sm font-medium text-center flex justify-center items-center transition-colors ease-in-out space-x-2"
                   }
                 >
                   {mobileLeftItems.map((item) => {
@@ -219,8 +219,8 @@ const App = () => {
                     href={item.to}
                     className={classNames(
                       item.active
-                        ? "bg-gray-300 text-black dark:bg-zinc-700 dark:text-white py-1.5"
-                        : "text-gray-400 hover:bg-gray-300 hover:text-black dark:hover:bg-zinc-700 dark:hover:text-white",
+                        ? "bg-gray-300 text-black dark:bg-zinc-600 dark:text-white py-1.5"
+                        : "text-gray-400 hover:bg-gray-200 hover:text-black dark:hover:bg-zinc-700 dark:hover:text-white",
                       "px-3 py-2 rounded-md text-sm font-medium"
                     )}
                   >

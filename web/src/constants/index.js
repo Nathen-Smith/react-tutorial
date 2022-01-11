@@ -1,6 +1,7 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
+// sections that show up and get highlighted in the nav bar
 export const pageSections = [
   { name: "Nathen", to: "#", active: true },
   { name: "About", to: "#about", active: false },
@@ -9,6 +10,8 @@ export const pageSections = [
   { name: "Contact", to: "#contact", active: false },
 ];
 
+// icons that show up on the right side of the nav bar
+// set mobileInvisible true to place the icon into the collapse-able dropdown
 export const navIconLinks = [
   {
     icon: faGithub,
@@ -27,6 +30,7 @@ export const navIconLinks = [
   },
 ];
 
+// items to show up on the left side of the nav bar when in mobile view
 export const mobileLeftItems = [
   { name: "Nathen Smith", to: "#", className: "font-bold" },
 ];

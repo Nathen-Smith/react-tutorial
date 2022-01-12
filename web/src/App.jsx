@@ -3,7 +3,7 @@ import { useMediaQuery } from "react-responsive";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon, SunIcon, MoonIcon } from "@heroicons/react/outline";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Content from "./Content";
+import Layout from "./Layout";
 import { pageSections, navIconLinks, mobileLeftItems } from "./constants";
 
 function classNames(...classes) {
@@ -27,6 +27,7 @@ const App = () => {
   );
 
   useEffect(() => {
+    //
     window.onscroll = () => {
       let navLinksLen = navLinks.length;
       for (let i = 1; i < navLinksLen; i++) {
@@ -43,9 +44,8 @@ const App = () => {
                 )
                 .getPropertyValue("height")
                 .slice(0, -2) //remove px
-            ) -
-            65 >
-            0
+            ) >
+            65
         ) {
           setPageSectionTrue(i);
           return;
@@ -115,29 +115,32 @@ const App = () => {
                 <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                   <div className="hidden sm:block sm">
                     <div className="flex space-x-4 ">
-                      {navLinks.map((item) => (
-                        <span key={item.to}>
-                          <a
-                            id={item.to}
-                            key={item.name}
-                            href={item.to}
-                            className={classNames(
-                              item.active
-                                ? "text-black dark:text-white"
-                                : "text-gray-400 hover:text-black dark:text-gray-500 dark:hover:text-gray-100",
-                              "h-16 text-sm font-medium text-center flex justify-center items-center transition-colors ease-in-out"
-                            )}
-                          >
-                            {item.name}
-                          </a>
+                      {navLinks.map((item) => {
+                        if (isNotMobile && !item.lgInvisible)
+                          return (
+                            <span key={item.to}>
+                              <a
+                                id={item.to}
+                                key={item.name}
+                                href={item.to}
+                                className={classNames(
+                                  item.active
+                                    ? "text-black dark:text-white"
+                                    : "text-gray-400 hover:text-black dark:text-gray-500 dark:hover:text-gray-100",
+                                  "h-16 text-sm font-medium text-center flex justify-center items-center transition-colors ease-in-out"
+                                )}
+                              >
+                                {item.name}
+                              </a>
 
-                          <div
-                            className={`${
-                              item.active ? "opacity-100" : "opacity-0"
-                            } relative h-0.5 bg-blue-600 dark:bg-indigo-300 -top-0.5 rounded-t-3xl transition-opacity ease-in-out`}
-                          ></div>
-                        </span>
-                      ))}
+                              <div
+                                className={`${
+                                  item.active ? "opacity-100" : "opacity-0"
+                                } relative h-0.5 bg-blue-600 dark:bg-indigo-300 -top-0.5 rounded-t-3xl transition-opacity ease-in-out`}
+                              ></div>
+                            </span>
+                          );
+                      })}
                     </div>
                   </div>
                 </div>
@@ -247,7 +250,7 @@ const App = () => {
           </>
         )}
       </Disclosure>
-      <Content />
+      <Layout />
     </div>
   );
 };

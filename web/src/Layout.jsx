@@ -1,6 +1,8 @@
-import { experience } from "./constants";
+import Experience from "./Experience";
+import Skills from "./Skills";
+import Projects from "./Projects";
 
-const Content = () => {
+const Layout = () => {
   return (
     <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div className="h-screen">
@@ -22,7 +24,10 @@ const Content = () => {
         </a>
       </div>
 
-      <div id="about" className="scroll-mt-16">
+      <div
+        id="about"
+        className="scroll-mt-16 dark:bg-gradient-to-r dark:from-zinc-800 dark:to-zinc-900"
+      >
         <div className="text-center text-4xl">about</div>
         <div>
           I am a Senior studying Computer Engineering at the University of
@@ -33,33 +38,23 @@ const Content = () => {
         </div>
       </div>
 
-      <div id="experience" className="scroll-mt-16">
-        <div className="text-center text-4xl">experience</div>
-        {experience.map(({ title, date, description }) => {
-          return (
-            <div className="flow-root" key={title}>
-              <p className="text-lg sm:float-left sm:text-xl">{title}</p>
-              <p className="text-lg sm:float-right sm:text-xl">{date}</p>
-              <p className="float-right dark:text-gray-400 text-gray-500 sm:text-lg">
-                {description}
-              </p>
-            </div>
-          );
-        })}
+      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-16">
+        <Experience />
+        <Skills />
       </div>
 
-      <div id="portfolio" className="scroll-mt-16">
-        <div className="text-center text-4xl">work i'm proud of</div>
-        <video autoPlay muted loop>
-          <source src="/assets/video.mp4" type="video/mp4" />
-        </video>
-      </div>
+      <Projects />
 
-      <div id="contact" className="scroll-mt-16">
+      <div
+        id="contact"
+        className="scroll-mt-16 dark:bg-gradient-to-r dark:from-zinc-800 dark:to-zinc-900"
+      >
         <div className="text-center text-4xl">get in touch!</div>
       </div>
+
+      {/* <footer className="bg-gray-400">Made by Nathen Smith</footer> */}
     </div>
   );
 };
 
-export default Content;
+export default Layout;

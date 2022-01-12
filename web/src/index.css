@@ -5,3 +5,28 @@
 input:checked ~ .dot {
   transform: translateX(85.71%);
 }
+
+.skillbar-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  font-size: 14px;
+  font-weight: semi-bold;
+}
+
+.skillbar-title span {
+  display: block;
+  width: 200px;
+  height: 35px;
+  line-height: 35px;
+}
+
+.skillbar {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  height: 35px;
+}

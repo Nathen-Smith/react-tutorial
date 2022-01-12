@@ -46,7 +46,7 @@ export const experience = [
     title: "Software Development Engineer Intern @ Forward Data Lab",
     date: "Sep 2021 - May 2022",
     description:
-      "I am responsible for performance, scalability, frontend and backend bugs and enhancements, database management, and deployment for the Education Today web application. I increased the performance of the slowest MySQL queries by 5 times down to 4s by using indexing and simplifying the query. I deployed the backend MySQL server to be accessible by ssh tunnel, containerized with Docker, and cached database queries with Redis.",
+      "Reduced latency of slowest MySQL queries 5 times by using DB indexing, compiler and algorithmic simplification. Researched methods and responsible for building an API for comparing institutions and faculty meaningfully, building on existing higher education API and Microsoft MAKES API. Containerized Flask server with Docker and deployed MySQL server accessed through ssh tunnel. Debugged and added UI/UX and backend features including responsiveness and image styling",
   },
   {
     title: "Database Systems CS 411 Course Assistant",
@@ -92,5 +92,47 @@ export const skills = [
     textColor: "white",
     backgroundColor: "#ff9800",
     percentage: "90%",
+  },
+  {
+    name: "Go",
+    textColor: "white",
+    backgroundColor: "#29BEB0",
+    percentage: "50%",
+  },
+  {
+    name: "React",
+    textColor: "white",
+    backgroundColor: "#61DBFB",
+    percentage: "90%",
+  },
+  {
+    name: "SQL",
+    textColor: "white",
+    backgroundColor: "#00758F",
+    percentage: "90%",
+  },
+  {
+    name: "MongoDB",
+    textColor: "white",
+    backgroundColor: "#4DB33D",
+    percentage: "90%",
+  },
+  {
+    name: "Docker",
+    textColor: "white",
+    backgroundColor: "#0db7ed",
+    percentage: "60%",
+  },
+  {
+    name: "Flask",
+    textColor: "white",
+    backgroundColor: "#b19cd9",
+    percentage: "60%",
+  },
+  {
+    name: "C++",
+    textColor: "white",
+    backgroundColor: "#f34b7d",
+    percentage: "60%",
   },
 ];

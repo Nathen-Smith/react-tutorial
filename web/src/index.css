@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-input:checked ~ .dot {
-  transform: translateX(85.71%);
-}
-
 .skillbar-title {
   position: absolute;
   top: 0;

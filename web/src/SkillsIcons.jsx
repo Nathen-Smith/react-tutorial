@@ -11,6 +11,16 @@ const SkillsIcons = () => {
               src={icon.src}
               alt={icon.alt}
               className="block w-20 max-h-20 block"
+              style={
+                icon.darkMode &&
+                (localStorage.theme === "dark" ||
+                  (!("theme" in localStorage) &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches))
+                  ? {
+                      filter: "brightness(0) saturate(100%) invert(1)",
+                    }
+                  : {}
+              }
             />
             <div className="text-center text-sm font-medium mt-2">
               {icon.name}

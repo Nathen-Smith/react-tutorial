@@ -137,106 +137,211 @@ export const skills = [
   },
 ];
 
+// skill icons data, use darkMode: to turn icons white when in dark mode
 export const skillIcons = [
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg",
-    alt: "cpp",
-    name: "C++",
+    src: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+    alt: "python",
+    name: "Python",
+    darkMode: false,
   },
+
   {
     src: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
     alt: "js",
     name: "JavaScript",
+    darkMode: false,
   },
   {
-    src: "/assets/flask.svg",
+    src: "/assets/icons/flask.svg",
     alt: "flask",
     name: "Flask",
+    darkMode: true,
   },
   {
-    src: "/assets/mysql.svg",
+    src: "/assets/icons/mysql.svg",
     alt: "mysql",
     name: "MySQL",
+    darkMode: false,
   },
   {
-    src: "/assets/react.svg",
+    src: "/assets/icons/react.svg",
     alt: "react",
     name: "React",
+    darkMode: false,
   },
   {
-    src: "/assets/typescript.svg",
+    src: "/assets/icons/typescript.svg",
     alt: "ts",
     name: "TypeScript",
+    darkMode: false,
   },
   {
     src: "https://firebase.google.com/downloads/brand-guidelines/SVG/logo-logomark.svg",
     alt: "firebase",
     name: "Firebase",
+    darkMode: false,
   },
+
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
-    alt: "python",
-    name: "Python",
-  },
-  {
-    src: "/assets/mongodb.svg",
+    src: "/assets/icons/mongodb.svg",
     alt: "mongodb",
     name: "MongoDB",
+    darkMode: false,
   },
   {
-    src: "/assets/docker.svg",
+    src: "/assets/icons/docker.svg",
     alt: "docker",
     name: "Docker",
+    darkMode: false,
   },
   {
-    src: "/assets/graphql.svg",
+    src: "https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg",
+    alt: "cpp",
+    name: "C++",
+    darkMode: false,
+  },
+  {
+    src: "/assets/icons/graphql.svg",
     alt: "graphql",
     name: "GraphQL",
+    darkMode: false,
   },
   {
-    src: "/assets/nodejs.svg",
+    src: "/assets/icons/nodejs.svg",
     alt: "node",
     name: "Node.js",
+    darkMode: false,
   },
   {
     src: "https://raw.githubusercontent.com/sveltejs/branding/master/svelte-logo.svg",
     alt: "svelte",
     name: "Svelte",
+    darkMode: false,
   },
   {
     src: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg",
     alt: "next",
     name: "Next.js",
+    darkMode: true,
   },
   {
     src: "https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg",
     alt: "sass",
     name: "Sass",
+    darkMode: false,
   },
   {
-    src: "/assets/gitlab-icon.svg",
+    src: "/assets/icons/gitlab-icon.svg",
     alt: "gitlab",
     name: "GitLab CI/CD",
+    darkMode: false,
   },
   {
     src: "https://wiki.postgresql.org/images/a/a4/PostgreSQL_logo.3colors.svg",
     alt: "pg",
     name: "PostgreSQL",
+    darkMode: false,
   },
   {
     src: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
     alt: "aws",
     name: "AWS",
+    darkMode: true,
   },
   {
-    src: "/assets/redux.svg",
+    src: "/assets/icons/redux.svg",
     alt: "redux",
     name: "Redux",
+    darkMode: false,
   },
   {
     src: "https://upload.wikimedia.org/wikipedia/commons/0/05/Go_Logo_Blue.svg",
     alt: "go",
     name: "Go",
+    darkMode: false,
   },
-  { src: "/assets/prisma.svg", alt: "prisma", name: "Prisma" },
+  {
+    src: "/assets/icons/prisma.svg",
+    alt: "prisma",
+    name: "Prisma",
+    darkMode: true,
+  },
+];
+
+export const projects = [
+  {
+    src: "/assets/projects/childdevtracker.jpeg",
+    alt: "childdevtracker",
+    name: "Child Development Tracker",
+    description:
+      "Full stack web app for a user to track their child's development and diet, changes, and general journal entries",
+    link: "https://github.com/Nathen-Smith/child-development-tracker",
+    tech: [
+      { name: "TypeScript", color: "#007acc" },
+      { name: "React", color: "#61DBFB" },
+      { name: "React-Router", color: "rgb(233, 73, 73)" },
+      { name: "MongoDB", color: "#3FA037" },
+      { name: "Firebase", color: "#FFA000" },
+      { name: "Docker", color: "#0db7ed" },
+    ],
+  },
+  {
+    src: "/assets/projects/fpga_mario.jpeg",
+    alt: "fpgamario",
+    name: "FPGA Mario NES",
+    description:
+      "FPGA SOC Mario NES in SystemVerilog. Built on a DE-10 Lite FPGA, synthesized in Quartus Prime 18.1",
+    link: "https://github.com/Nathen-Smith/FPGA_super_mario_bros",
+    tech: [
+      { name: "TypeScript", color: "#007acc" },
+      { name: "React", color: "#61DBFB" },
+    ],
+  },
+  {
+    src: "/assets/projects/databoard.jpeg",
+    alt: "data-board",
+    name: "Data Dashboard",
+    description: "Real-time Business Intelligence on Kaggle Movies Dataset",
+    link: "https://github.com/Nathen-Smith/data-dashboard",
+    tech: [
+      { name: "TypeScript", color: "#007acc" },
+      { name: "React", color: "#61DBFB" },
+    ],
+  },
+  {
+    src: "/assets/projects/marvelapp.jpeg",
+    alt: "marvelapiapp",
+    name: "Marvel API APP",
+    description: "Frontend App using Marvel API",
+    link: "https://nathensmith.com/marvel-api-app/",
+    tech: [
+      { name: "TypeScript", color: "#007acc" },
+      { name: "React", color: "#61DBFB" },
+    ],
+  },
+  {
+    src: "/assets/projects/hippocampus.jpg",
+    alt: "hippocampus",
+    name: "HippoCampus",
+    description:
+      "A student matching database-driven web app that allows users to customize their profile and set preferences on a desired study buddy or project partner",
+    link: "https://github.com/Nathen-Smith/HippoCampus",
+    tech: [
+      { name: "TypeScript", color: "#007acc" },
+      { name: "React", color: "#61DBFB" },
+    ],
+  },
+  {
+    src: "/assets/projects/linux.jpeg",
+    alt: "os",
+    name: "Operating System",
+    description:
+      "Preemptively multitasked operating system including system calls, virtual memory, interrupts and exceptions, a GUI, and a filesystem starting from a bootloader",
+    link: "https://github.com/Nathen-Smith/Operating-System",
+    tech: [
+      { name: "TypeScript", color: "#007acc" },
+      { name: "React", color: "#61DBFB" },
+    ],
+  },
 ];

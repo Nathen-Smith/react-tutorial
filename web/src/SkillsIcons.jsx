@@ -3,7 +3,7 @@ import { skillIcons } from "./constants";
 const SkillsIcons = () => {
   return (
     <div id="skills" className="scroll-mt-16 mx-auto">
-      <div className="text-center text-4xl">skills</div>
+      <div className="text-center text-4xl mb-2">skills</div>
       <div className="grid grid-cols-3 mx-auto gap-4 gap-x-10 lg:gap-x-20 sm:gap-10">
         {skillIcons.map((icon) => (
           <div key={icon.src}>

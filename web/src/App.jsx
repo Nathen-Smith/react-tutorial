@@ -31,6 +31,10 @@ const App = () => {
     window.onscroll = () => {
       let navLinksLen = navLinks.length;
       for (let i = 1; i < navLinksLen; i++) {
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+          setPageSectionTrue(navLinksLen - 1);
+          return;
+        }
         let elementDistanceFromTopOfViewHeight = document
           .getElementById(navLinks[i].to.slice(1))
           ?.getBoundingClientRect().top;

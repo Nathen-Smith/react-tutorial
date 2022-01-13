@@ -46,7 +46,7 @@ export const experience = [
     title: "Software Development Engineer Intern @ Forward Data Lab",
     date: "Sep 2021 - May 2022",
     description:
-      "Reduced latency of slowest MySQL queries 5 times by using DB indexing, compiler and algorithmic simplification. Researched methods and responsible for building an API for comparing institutions and faculty meaningfully, building on existing higher education API and Microsoft MAKES API. Containerized Flask server with Docker and deployed MySQL server accessed through ssh tunnel. Debugged and added UI/UX and backend features including responsiveness and image styling",
+      "I reduced the latency of the slowest MySQL queries 5 times by using DB indexing, compiler and algorithmic simplification. I researched methods and am responsible for building an API for comparing institutions and faculty meaningfully, building on existing higher education API and Microsoft MAKES API. I containerized the Flask server with Docker and deployed MySQL server accessed through ssh tunnel. I debugged and added UI/UX and backend features including responsiveness and image styling.",
   },
   {
     title: "Database Systems CS 411 Course Assistant",
@@ -294,8 +294,8 @@ export const projects = [
       "FPGA SOC Mario NES in SystemVerilog. Built on a DE-10 Lite FPGA, synthesized in Quartus Prime 18.1",
     link: "https://github.com/Nathen-Smith/FPGA_super_mario_bros",
     tech: [
-      { name: "TypeScript", color: "#007acc" },
-      { name: "React", color: "#61DBFB" },
+      { name: "SystemVerilog", color: "#4B0082" },
+      { name: "C", color: "gray" },
     ],
   },
   {
@@ -307,6 +307,8 @@ export const projects = [
     tech: [
       { name: "TypeScript", color: "#007acc" },
       { name: "React", color: "#61DBFB" },
+      { name: "Firebase", color: "#FFA000" },
+      { name: "Python", color: "#306998" },
     ],
   },
   {
@@ -318,6 +320,7 @@ export const projects = [
     tech: [
       { name: "TypeScript", color: "#007acc" },
       { name: "React", color: "#61DBFB" },
+      { name: "React-Router", color: "rgb(233, 73, 73)" },
     ],
   },
   {
@@ -328,8 +331,11 @@ export const projects = [
       "A student matching database-driven web app that allows users to customize their profile and set preferences on a desired study buddy or project partner",
     link: "https://github.com/Nathen-Smith/HippoCampus",
     tech: [
-      { name: "TypeScript", color: "#007acc" },
+      { name: "JavaScript", color: "#F0DB4F", textColor: "black" },
+      { name: "Python", color: "#306998" },
       { name: "React", color: "#61DBFB" },
+      { name: "Flask", color: "gray" },
+      { name: "MySQL", color: "#00758F" },
     ],
   },
   {
@@ -340,8 +346,8 @@ export const projects = [
       "Preemptively multitasked operating system including system calls, virtual memory, interrupts and exceptions, a GUI, and a filesystem starting from a bootloader",
     link: "https://github.com/Nathen-Smith/Operating-System",
     tech: [
-      { name: "TypeScript", color: "#007acc" },
-      { name: "React", color: "#61DBFB" },
+      { name: "C", color: "gray" },
+      { name: "x86", color: "#007DC3" },
     ],
   },
 ];

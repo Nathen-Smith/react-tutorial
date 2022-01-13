@@ -40,9 +40,9 @@ const Layout = () => {
       </div>
 
       {isNotMobile ? (
-        <div id="about" className="scroll-mt-16">
-          <div className="text-center text-4xl">about</div>
-          <div className="text-lg">
+        <div id="about" className="scroll-mt-16 mb-2">
+          <div className="text-center text-4xl mb-2">about</div>
+          <div className="text-lg mb-2">
             I am a Senior studying Computer Engineering at the University of
             Illinois at Urbana-Champaign. Detail-oriented software developer
             where I enjoy fostering a positive development environment,
@@ -57,7 +57,7 @@ const Layout = () => {
         </div>
       ) : (
         <div>
-          <div id="about" className="scroll-mt-16">
+          <div id="about" className="scroll-mt-16 mb-2">
             <div className="text-center text-4xl">about</div>
             <div className="text-lg">
               I am a Senior studying Computer Engineering at the University of
@@ -77,8 +77,8 @@ const Layout = () => {
 
       <Projects />
 
-      <div id="contact" className="scroll-mt-16">
-        <div className="text-center text-4xl">get in touch!</div>
+      <div id="contact" className="scroll-mt-16 mb-2">
+        <div className="text-center text-4xl mb-2">get in touch!</div>
         <div className="flex flex-row space-x-10 items-center justify-center">
           {navIconLinks.map((item) => (
             <a href={item.link} key={item.link} className="block w-100">

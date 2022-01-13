@@ -5,7 +5,7 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 export const pageSections = [
   { name: "Nathen", to: "#", active: true, lgInvisible: false },
   { name: "About", to: "#about", active: false, lgInvisible: false },
-  { name: "Experience", to: "#experience", active: false, lgInvisible: false },
+  { name: "Experience", to: "#experience", active: false, lgInvisible: true },
   { name: "Skills", to: "#skills", active: false, lgInvisible: true },
   { name: "Portfolio", to: "#portfolio", active: false, lgInvisible: false },
   { name: "Contact", to: "#contact", active: false, lgInvisible: false },
@@ -135,4 +135,108 @@ export const skills = [
     backgroundColor: "#f34b7d",
     percentage: "60%",
   },
+];
+
+export const skillIcons = [
+  {
+    src: "https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg",
+    alt: "cpp",
+    name: "C++",
+  },
+  {
+    src: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+    alt: "js",
+    name: "JavaScript",
+  },
+  {
+    src: "/assets/flask.svg",
+    alt: "flask",
+    name: "Flask",
+  },
+  {
+    src: "/assets/mysql.svg",
+    alt: "mysql",
+    name: "MySQL",
+  },
+  {
+    src: "/assets/react.svg",
+    alt: "react",
+    name: "React",
+  },
+  {
+    src: "/assets/typescript.svg",
+    alt: "ts",
+    name: "TypeScript",
+  },
+  {
+    src: "https://firebase.google.com/downloads/brand-guidelines/SVG/logo-logomark.svg",
+    alt: "firebase",
+    name: "Firebase",
+  },
+  {
+    src: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+    alt: "python",
+    name: "Python",
+  },
+  {
+    src: "/assets/mongodb.svg",
+    alt: "mongodb",
+    name: "MongoDB",
+  },
+  {
+    src: "/assets/docker.svg",
+    alt: "docker",
+    name: "Docker",
+  },
+  {
+    src: "/assets/graphql.svg",
+    alt: "graphql",
+    name: "GraphQL",
+  },
+  {
+    src: "/assets/nodejs.svg",
+    alt: "node",
+    name: "Node.js",
+  },
+  {
+    src: "https://raw.githubusercontent.com/sveltejs/branding/master/svelte-logo.svg",
+    alt: "svelte",
+    name: "Svelte",
+  },
+  {
+    src: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg",
+    alt: "next",
+    name: "Next.js",
+  },
+  {
+    src: "https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg",
+    alt: "sass",
+    name: "Sass",
+  },
+  {
+    src: "/assets/gitlab-icon.svg",
+    alt: "gitlab",
+    name: "GitLab CI/CD",
+  },
+  {
+    src: "https://wiki.postgresql.org/images/a/a4/PostgreSQL_logo.3colors.svg",
+    alt: "pg",
+    name: "PostgreSQL",
+  },
+  {
+    src: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+    alt: "aws",
+    name: "AWS",
+  },
+  {
+    src: "/assets/redux.svg",
+    alt: "redux",
+    name: "Redux",
+  },
+  {
+    src: "https://upload.wikimedia.org/wikipedia/commons/0/05/Go_Logo_Blue.svg",
+    alt: "go",
+    name: "Go",
+  },
+  { src: "/assets/prisma.svg", alt: "prisma", name: "Prisma" },
 ];

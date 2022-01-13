@@ -12,6 +12,7 @@ function classNames(...classes) {
 
 const App = () => {
   const [navLinks, setNavLinks] = useState(pageSections);
+  const isNotMobile = useMediaQuery({ query: "(min-width: 640px)" });
 
   const setPageSectionTrue = useCallback(
     (index) => {
@@ -99,8 +100,6 @@ const App = () => {
 
   const [theme, dispatch] = useReducer(reducer, localStorage.theme || "dark");
 
-  const isNotMobile = useMediaQuery({ query: "(min-width: 640px)" });
-
   return (
     <div className="dark:bg-zinc-800 dark:text-gray-300 transition-colors ease-in-out">
       <Disclosure
@@ -113,7 +112,7 @@ const App = () => {
               <div className="flex items-center justify-between h-16">
                 <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                   <div className="hidden sm:block sm">
-                    <div className="flex space-x-4 ">
+                    <div className="flex space-x-4 sm:space-x-6">
                       {navLinks
                         .filter((item) => isNotMobile && !item.lgInvisible)
                         .map((item) => (
@@ -161,7 +160,7 @@ const App = () => {
                 </div>
 
                 <div className="absolute inset-y-0 right-0 flex items-center justify-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                  <div className="ml-3 relative text-sm font-small flex flex-row justify-center items-center space-x-2">
+                  <div className="ml-3 relative text-sm font-small flex flex-row justify-center items-center space-x-2 sm:space-x-4">
                     {navIconLinks
                       .filter((item) => isNotMobile || !item.mobileInvisible)
                       .map((item) => {

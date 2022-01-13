@@ -1,7 +1,7 @@
 import { InView } from "react-intersection-observer";
 import { skills } from "./constants";
 
-const Skills = () => {
+const SkillsBar = () => {
   return (
     <div id="skills" className="scroll-mt-16">
       <div className="text-center text-4xl">skills</div>
@@ -33,4 +33,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default SkillsBar;

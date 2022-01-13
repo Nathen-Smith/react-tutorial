@@ -1,13 +1,17 @@
 import Experience from "./Experience";
-import Skills from "./Skills";
+// import SkillsBar from "./SkillsBar";
+import SkillsIcons from "./SkillsIcons";
 import Projects from "./Projects";
 import { navIconLinks } from "./constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useMediaQuery } from "react-responsive";
 
 const Layout = () => {
+  const isNotMobile = useMediaQuery({ query: "(min-width: 640px)" });
+
   return (
     <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-2" style={{ height: "70vh" }}>
+      <div className="grid grid-cols-2 h-screen">
         <div>
           <div className="text-9xl text-black dark:text-white">Hi.</div>
           <div className="text-3xl text-black dark:text-white">
@@ -35,21 +39,41 @@ const Layout = () => {
         />
       </div>
 
-      <div id="about" className="scroll-mt-16">
-        <div className="text-center text-4xl">about</div>
-        <div className="text-lg">
-          I am a Senior studying Computer Engineering at the University of
-          Illinois at Urbana-Champaign. Detail-oriented software developer where
-          I enjoy fostering a positive development environment, designing
-          scalable solutions and ensuring responsive, intuitive user
-          experiences.
+      {isNotMobile ? (
+        <div id="about" className="scroll-mt-16">
+          <div className="text-center text-4xl">about</div>
+          <div className="text-lg">
+            I am a Senior studying Computer Engineering at the University of
+            Illinois at Urbana-Champaign. Detail-oriented software developer
+            where I enjoy fostering a positive development environment,
+            designing scalable solutions and ensuring responsive, intuitive user
+            experiences.
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-16">
+            <Experience />
+            {/* <SkillsBar /> */}
+            <SkillsIcons />
+          </div>
         </div>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-16">
-        <Experience />
-        <Skills />
-      </div>
+      ) : (
+        <div>
+          <div id="about" className="scroll-mt-16">
+            <div className="text-center text-4xl">about</div>
+            <div className="text-lg">
+              I am a Senior studying Computer Engineering at the University of
+              Illinois at Urbana-Champaign. Detail-oriented software developer
+              where I enjoy fostering a positive development environment,
+              designing scalable solutions and ensuring responsive, intuitive
+              user experiences.
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-16">
+            <Experience />
+            {/* <SkillsBar /> */}
+            <SkillsIcons />
+          </div>
+        </div>
+      )}
 
       <Projects />
 

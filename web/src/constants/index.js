@@ -153,25 +153,25 @@ export const skillIcons = [
     darkMode: false,
   },
   {
-    src: "/assets/icons/flask.svg",
+    src: "/react-tutorial/assets/icons/flask.svg",
     alt: "flask",
     name: "Flask",
     darkMode: true,
   },
   {
-    src: "/assets/icons/mysql.svg",
+    src: "/react-tutorial/assets/icons/mysql.svg",
     alt: "mysql",
     name: "MySQL",
     darkMode: false,
   },
   {
-    src: "/assets/icons/react.svg",
+    src: "/react-tutorial/assets/icons/react.svg",
     alt: "react",
     name: "React",
     darkMode: false,
   },
   {
-    src: "/assets/icons/typescript.svg",
+    src: "/react-tutorial/assets/icons/typescript.svg",
     alt: "ts",
     name: "TypeScript",
     darkMode: false,
@@ -184,13 +184,13 @@ export const skillIcons = [
   },
 
   {
-    src: "/assets/icons/mongodb.svg",
+    src: "/react-tutorial/assets/icons/mongodb.svg",
     alt: "mongodb",
     name: "MongoDB",
     darkMode: false,
   },
   {
-    src: "/assets/icons/docker.svg",
+    src: "/react-tutorial/assets/icons/docker.svg",
     alt: "docker",
     name: "Docker",
     darkMode: false,
@@ -202,13 +202,13 @@ export const skillIcons = [
     darkMode: false,
   },
   {
-    src: "/assets/icons/graphql.svg",
+    src: "/react-tutorial/assets/icons/graphql.svg",
     alt: "graphql",
     name: "GraphQL",
     darkMode: false,
   },
   {
-    src: "/assets/icons/nodejs.svg",
+    src: "/react-tutorial/assets/icons/nodejs.svg",
     alt: "node",
     name: "Node.js",
     darkMode: false,
@@ -232,7 +232,7 @@ export const skillIcons = [
     darkMode: false,
   },
   {
-    src: "/assets/icons/gitlab-icon.svg",
+    src: "/react-tutorial/assets/icons/gitlab-icon.svg",
     alt: "gitlab",
     name: "GitLab CI/CD",
     darkMode: false,
@@ -250,7 +250,7 @@ export const skillIcons = [
     darkMode: true,
   },
   {
-    src: "/assets/icons/redux.svg",
+    src: "/react-tutorial/assets/icons/redux.svg",
     alt: "redux",
     name: "Redux",
     darkMode: false,
@@ -262,7 +262,7 @@ export const skillIcons = [
     darkMode: false,
   },
   {
-    src: "/assets/icons/prisma.svg",
+    src: "/react-tutorial/assets/icons/prisma.svg",
     alt: "prisma",
     name: "Prisma",
     darkMode: true,
@@ -271,7 +271,7 @@ export const skillIcons = [
 
 export const projects = [
   {
-    src: "/assets/projects/childdevtracker.jpeg",
+    src: "/react-tutorial/assets/projects/childdevtracker.jpeg",
     alt: "childdevtracker",
     name: "Child Development Tracker",
     description:
@@ -287,7 +287,7 @@ export const projects = [
     ],
   },
   {
-    src: "/assets/projects/fpga_mario.jpeg",
+    src: "/react-tutorial/assets/projects/fpga_mario.jpeg",
     alt: "fpgamario",
     name: "FPGA Mario NES",
     description:
@@ -299,7 +299,7 @@ export const projects = [
     ],
   },
   {
-    src: "/assets/projects/databoard.jpeg",
+    src: "/react-tutorial/assets/projects/databoard.jpeg",
     alt: "data-board",
     name: "Data Dashboard",
     description: "Real-time Business Intelligence on Kaggle Movies Dataset",
@@ -312,7 +312,7 @@ export const projects = [
     ],
   },
   {
-    src: "/assets/projects/marvelapp.jpeg",
+    src: "/react-tutorial/assets/projects/marvelapp.jpeg",
     alt: "marvelapiapp",
     name: "Marvel API APP",
     description: "Frontend App using Marvel API",
@@ -324,7 +324,7 @@ export const projects = [
     ],
   },
   {
-    src: "/assets/projects/hippocampus.jpg",
+    src: "/react-tutorial/assets/projects/hippocampus.jpg",
     alt: "hippocampus",
     name: "HippoCampus",
     description:
@@ -339,7 +339,7 @@ export const projects = [
     ],
   },
   {
-    src: "/assets/projects/linux.jpeg",
+    src: "/react-tutorial/assets/projects/linux.jpeg",
     alt: "os",
     name: "Operating System",
     description:

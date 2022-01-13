@@ -33,7 +33,7 @@ const Layout = () => {
           </a>
         </div>
         <img
-          src="/assets/me.jpg"
+          src="/react-tutorial/assets/me.jpg"
           alt="portrait"
           className="rounded-full w-3/4 lg:w-1/2 mt-6"
         />

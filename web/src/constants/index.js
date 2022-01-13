@@ -62,6 +62,8 @@ export const experience = [
   },
 ];
 
+export const showSkillBar = false; // show icons instead
+
 export const skills = [
   {
     name: "JavaScript & Node",

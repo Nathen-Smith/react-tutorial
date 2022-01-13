@@ -1,5 +1,6 @@
 import Experience from "./Experience";
-// import SkillsBar from "./SkillsBar";
+import { showSkillBar } from "./constants";
+import SkillsBar from "./SkillsBar";
 import SkillsIcons from "./SkillsIcons";
 import Projects from "./Projects";
 import { navIconLinks } from "./constants";
@@ -51,8 +52,7 @@ const Layout = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-16">
             <Experience />
-            {/* <SkillsBar /> */}
-            <SkillsIcons />
+            {showSkillBar ? <SkillsBar /> : <SkillsIcons />}
           </div>
         </div>
       ) : (
@@ -69,8 +69,7 @@ const Layout = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-16">
             <Experience />
-            {/* <SkillsBar /> */}
-            <SkillsIcons />
+            {showSkillBar ? <SkillsBar /> : <SkillsIcons />}
           </div>
         </div>
       )}

@@ -1,13 +1,11 @@
-import { projects } from "./constants";
+import { projects } from "../constants";
 import { ExternalLinkIcon } from "@heroicons/react/outline";
 import { useMediaQuery } from "react-responsive";
 
 const Projects = () => {
   const isNotMobile = useMediaQuery({ query: "(min-width: 640px)" });
   return (
-    <div id="portfolio" className="scroll-mt-16 mb-2">
-      <div className="text-center text-4xl mb-2">work i'm proud of</div>
-
+    <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {projects.map((project) => (
           <div

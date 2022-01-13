@@ -36,6 +36,52 @@ export const mobileLeftItems = [
   { name: "Nathen Smith", to: "#", className: "font-bold" },
 ];
 
+export const Intro = () => {
+  return (
+    <div className="grid grid-cols-2 h-screen">
+      <div>
+        <div className="text-9xl text-black dark:text-white">Hi.</div>
+        <div className="text-3xl text-black dark:text-white">
+          I'm Nathen Smith.
+        </div>
+        <br />
+        <div className="text-gray-600 text-gray-800 dark:text-gray-300 text-lg">
+          <div>Computer Engineer at UIUC.</div>
+          <div>Experienced Full Stack Developer.</div>
+          <div>React, Python, and TypeScript Enthusiast.</div>
+          <div>Badminton Player.</div>
+        </div>
+        <br />
+        <a
+          href="#about"
+          className="btn dark:bg-white text-white dark:text-black bg-blue-500 px-3 py-2 rounded-md btn-sm sm:hidden font-bold text-sm"
+        >
+          MORE ABOUT ME
+        </a>
+      </div>
+      <img
+        src="/react-tutorial/assets/me.jpg"
+        alt="portrait"
+        className="rounded-full w-3/4 lg:w-1/2 mt-6"
+      />
+    </div>
+  );
+};
+
+export const About = () => {
+  return (
+    <div>
+      <div className="text-center text-4xl mb-2">about</div>
+      <div className="text-lg mb-2">
+        I am a Senior studying Computer Engineering at the University of
+        Illinois at Urbana-Champaign. Detail-oriented software developer where I
+        enjoy fostering a positive development environment, designing scalable
+        solutions and ensuring responsive, intuitive user experiences.
+      </div>
+    </div>
+  );
+};
+
 export const experience = [
   {
     title: "Incoming Digital Systems Laboratory ECE 385 Course Assistant",
@@ -268,6 +314,24 @@ export const skillIcons = [
     alt: "prisma",
     name: "Prisma",
     darkMode: true,
+  },
+  {
+    src: "/react-tutorial/assets/icons/tailwindcss.svg",
+    alt: "twcss",
+    name: "Tailwind CSS",
+    darkMode: false,
+  },
+  {
+    src: "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg",
+    alt: "gh",
+    name: "GitHub",
+    darkMode: true,
+  },
+  {
+    src: "/react-tutorial/assets/icons/java.svg",
+    alt: "java",
+    name: "Java",
+    darkMode: false,
   },
 ];
 

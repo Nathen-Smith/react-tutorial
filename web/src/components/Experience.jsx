@@ -1,9 +1,8 @@
-import { experience } from "./constants";
+import { experience } from "../constants";
 
 const Experience = () => {
   return (
-    <div id="experience" className="scroll-mt-16">
-      <div className="text-center text-4xl mb-2">experience</div>
+    <div>
       {experience.map(({ title, date, description }) => (
         <div
           className="flow-root sm:transition-none ease-in-out delay-200 overflow-hidden"
